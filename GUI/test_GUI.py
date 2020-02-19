@@ -4,17 +4,17 @@ from auxillary import generate_prediction, generate_seq
 from keras.preprocessing.text import Tokenizer
 import pickle
 
-num_epochs = 20
+num_epochs = 50
 
 NUMBER_OF_WORDS = 15
 
-with open("../saved_models/ra_top_{}.pickle".format(num_epochs), "rb") as f:
+with open("../saved_models/relationships_{}.pickle".format(num_epochs), "rb") as f:
     list_of_params = pickle.load(f)
     tokenizer = list_of_params[0]
     max_length = list_of_params[1]
 
 
-model_path = "../saved_models/ra_top_{}.h5".format(num_epochs)
+model_path = "../saved_models/relationships_{}.h5".format(num_epochs)
 model = load_model(model_path)
 
 window = Tk()
